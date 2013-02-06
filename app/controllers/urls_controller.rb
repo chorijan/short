@@ -6,8 +6,7 @@ class UrlsController < ApplicationController
     url = current_site.urls.find_by_short(params[:short])
 
     if url
-    	# Click.create(:url_id => url.id, :referrer => request.referer, :user_agent => request.user_agent, :ip_address => request.ip)
-
+    	Click.create(:url_id => url.id, :referrer => request.referer, :user_agent => request.user_agent, :ip_address => request.ip)
       puts "redirecting to " + url.long
       redirect_to url.long
     else
