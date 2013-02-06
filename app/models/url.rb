@@ -7,7 +7,7 @@ class Url < ActiveRecord::Base
 
   validates_uniqueness_of :long_url, :short
   validates_presence_of :site, :long_url, :short
-  # format_url :long
+  format_url :long_url
 
   default_scope :order => "id DESC"
 

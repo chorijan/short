@@ -129,9 +129,6 @@ GEM
       certified
       http_parser.rb
     http_parser.rb (0.5.3)
-    httparty (0.10.2)
-      multi_json (~> 1.0)
-      multi_xml (>= 0.5.2)
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (2.2.0)
@@ -152,7 +149,6 @@ GEM
     method_source (0.8.1)
     mime-types (1.20.1)
     multi_json (1.5.0)
-    multi_xml (0.5.2)
     mysql2 (0.3.11)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
@@ -223,11 +219,6 @@ GEM
       multi_json (~> 1.0)
       rubyzip
       websocket (~> 1.0.4)
-    simple_postmark (0.5.1)
-      activesupport (~> 3.0)
-      httparty
-      json
-      mail
     simplecov (0.7.1)
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
@@ -253,6 +244,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    url_formatter (0.0.1)
     websocket (1.0.7)
     whenever (0.8.2)
       activesupport (>= 2.3.4)
@@ -295,9 +287,9 @@ DEPENDENCIES
   rspec-rails
   sass
   sass-rails (~> 3.2.3)
-  simple_postmark
   simplecov
   spork
   uglifier (>= 1.0.3)
   unicorn
+  url_formatter
   will_paginate

@@ -32,19 +32,11 @@ gem "unicorn"
 # gem 'omniauth-google-oauth2'
 # gem 'omniauth-tumblr'
 
-# Authorization
-# gem "cancan"
-# gem "rolify"
-
-
 # Tools & Utilities for Voupe apps
 gem "gonzo"
 
-# Voupe Contact Form
-#gem "voupe_contact"
+gem "url_formatter"
 
-# Email delivery with Postmark
-gem "simple_postmark"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
