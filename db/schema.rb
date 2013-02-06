@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206144050) do
+ActiveRecord::Schema.define(:version => 20130206174308) do
 
   create_table "clicks", :force => true do |t|
     t.integer  "url_id"
     t.string   "referrer"
     t.string   "user_agent"
     t.string   "ip_address"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "sites", :force => true do |t|
@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(:version => 20130206144050) do
     t.integer  "site_id"
     t.string   "long_url"
     t.string   "short"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.integer  "old_clicks"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "title"
   end
 
