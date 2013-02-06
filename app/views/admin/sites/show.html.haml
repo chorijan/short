@@ -19,6 +19,7 @@
 			- @urls.each do |url|
 				= content_tag_for(:tr, url) do
 					%td.long_url
+						%b= url.title
 						%p= url.long_url
 					%td= link_to url.full_short_link, url.full_short_link
 					%td

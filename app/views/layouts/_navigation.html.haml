@@ -11,7 +11,3 @@
 				- Site.all.each do |site|
 					%li= link_to raw("<b>#{site.name} - #{site.domain}</b> (#{site.urls.size})"), admin_site_path(site)
 		%li= link_to "URLS", ""
-				
-
-	/ %p.navbar-text.pull-right
-	/ 	= link_to "Logged in as #{current_user.email}", logout_path, :class => "navbar-link", :title => "Logout"
