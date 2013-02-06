@@ -1,11 +1,8 @@
-= link_to 'Edit', edit_admin_site_path(@site)
+- content_for :title_header do
+	= link_to "Edit Site", edit_admin_site_path(@site), :class => "btn", :style => "float: right; position: relative; top: -45px;"
 
-= form_tag admin_site_path(@site), :method => 'get', :id => "products_search" do
-	%p
-		= text_field_tag :search, params[:search]
-		= submit_tag "Search", :name => nil
-	/ #urls
-	/ 	= render 'products'
+	= form_tag admin_site_path(@site), :method => :get, :style => "margin-right: 15px; float: right; position: relative; top: -45px;" do
+		= text_field_tag :search, params[:search], :placeholder => "Search URLs", :style => "width: 125px"
 
 %table.table.table-striped.table-bordered
 	%thead

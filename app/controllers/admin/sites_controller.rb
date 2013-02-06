@@ -8,8 +8,7 @@ class Admin::SitesController < ApplicationController
 
   def show
     @site = Site.find(params[:id])
-    # @urls = @site.urls.paginate(:page => params[:page])
-    @urls = @site.urls.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page])
+    @urls = @site.urls.search(params[:search]).paginate(:page => params[:page])
     @title = @site.domain
   end
 

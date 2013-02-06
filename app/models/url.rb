@@ -9,10 +9,11 @@ class Url < ActiveRecord::Base
   validates_presence_of :site, :long_url, :short
   # format_url :long
 
+  default_scope :order => "id DESC"
+
   before_create :generate_short
 
-  scope :search, lambda { |search| where("long_url LIKE ?", "%#{search}%")}
-
+  scope :search, lambda { |search| where("long_url LIKE ? OR short LIKE ?", "%#{search}%", "%#{search}%")}
 
   def full_short_link
   	"http://#{self.site.domain}/#{self.short}"  	
