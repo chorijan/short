@@ -1,12 +1,15 @@
 class Admin::SitesController < ApplicationController
 
+  helper_method :sort_column, :sort_direction
+
   def index
     @sites = Site.all
   end
 
   def show
     @site = Site.find(params[:id])
-    @urls = @site.urls.paginate(:page => params[:page])
+    # @urls = @site.urls.paginate(:page => params[:page])
+    @urls = @site.urls.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page])
     @title = @site.domain
   end
 
@@ -44,4 +47,15 @@ class Admin::SitesController < ApplicationController
 
     redirect_to admin_sites_url
   end
+
+  private
+  
+  def sort_column
+    @site.urls.column_names.include?(params[:sort]) ? params[:sort] : "id"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
 end

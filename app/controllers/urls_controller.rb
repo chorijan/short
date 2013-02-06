@@ -7,7 +7,7 @@ class UrlsController < ApplicationController
 
     if url
     	Click.create(:url_id => url.id, :referrer => request.referer, :user_agent => request.user_agent, :ip_address => request.ip)
-      redirect_to url.long
+      redirect_to url.long_url
     else
     	render :text => "URL not found", :status => 404
     	# render :file => "#{Rails.root}/public/404.html", :status => :not_found

@@ -60,6 +60,8 @@ group :development do
   gem "letter_opener"
   gem "haml-rails"
   gem "annotate", :git => "git://github.com/ctran/annotate_models.git"
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development, :test do

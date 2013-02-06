@@ -1,5 +1,12 @@
 = link_to 'Edit', edit_admin_site_path(@site)
 
+= form_tag admin_site_path(@site), :method => 'get', :id => "products_search" do
+	%p
+		= text_field_tag :search, params[:search]
+		= submit_tag "Search", :name => nil
+	/ #urls
+	/ 	= render 'products'
+
 %table.table.table-striped.table-bordered
 	%thead
 		%tr
@@ -12,7 +19,7 @@
 			- @urls.each do |url|
 				= content_tag_for(:tr, url) do
 					%td.long_url
-						%p= url.long
+						%p= url.long_url
 					%td= link_to url.full_short_link, url.full_short_link
 					%td= url.clicks.size
 					%td= link_to "X", admin_site_url_path(@site, url), :method => :delete, :data => {:confirm => "Are you sure?"}

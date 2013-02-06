@@ -44,6 +44,10 @@ GEM
     app_reset (0.0.8)
       rails
     arel (3.0.2)
+    better_errors (0.5.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.6.8)
     builder (3.0.4)
     capistrano (2.13.5)
       highline
@@ -264,6 +268,8 @@ DEPENDENCIES
   airbrake
   annotate!
   app_reset
+  better_errors
+  binding_of_caller
   capistrano
   capybara
   coffee-rails (~> 3.2.1)
