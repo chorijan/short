@@ -2,6 +2,7 @@ class Admin::SitesController < ApplicationController
 
   def index
     @sites = Site.all
+    @title = "All Sites"
   end
 
   def show
@@ -12,10 +13,12 @@ class Admin::SitesController < ApplicationController
 
   def new
     @site = Site.new
+    @title = "New Site"
   end
 
   def edit
     @site = Site.find(params[:id])
+    @title = "Editing #{@site.domain}"
   end
 
   def create

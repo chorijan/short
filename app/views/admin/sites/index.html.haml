@@ -1,22 +1,17 @@
-%h1 Listing sites
+- content_for :title_header do
+	= link_to 'New Site', new_admin_site_path, :class => "btn", :style => "float: right; position: relative; top: -45px;"
 
-%table
-  %tr
-    %th Name
-    %th Uuid
-    %th Domain
-    %th
-    %th
-    %th
-
-  - @sites.each do |site|
-    %tr
-      %td= site.name
-      %td= site.uuid
-      %td= site.domain
-      %td= link_to 'Show', admin_site_path(site)
-      %td= link_to 'Edit', edit_admin_site_path(site)
-
-%br
-
-= link_to 'New Site', new_admin_site_path
+%table.table.table-striped.table-bordered
+	%thead
+		%tr
+			%th Name
+			%th UUID
+			%th Domain
+			%th
+	%tbody
+	- @sites.each do |site|
+		= content_tag_for(:tr, site) do
+			%td= link_to site.name, admin_site_path(site)
+			%td= site.uuid
+			%td= site.domain
+			%td= link_to "Edit", edit_admin_site_path(site)
