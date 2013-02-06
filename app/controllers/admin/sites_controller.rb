@@ -6,7 +6,7 @@ class Admin::SitesController < ApplicationController
 
   def show
     @site = Site.find(params[:id])
-    @urls = @site.urls
+    @urls = @site.urls.paginate(:page => params[:page])
     @title = @site.domain
   end
 
