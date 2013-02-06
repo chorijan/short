@@ -9,7 +9,7 @@
 				%li= link_to "New Site", new_admin_site_path
 				%li.divider
 				- Site.all.each do |site|
-					%li= link_to "#{site.name} (#{site.urls.size})", admin_site_path(site)
+					%li= link_to raw("<b>#{site.name} - #{site.domain}</b> (#{site.urls.size})"), admin_site_path(site)
 		%li= link_to "URLS", ""
 				
 
