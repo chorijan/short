@@ -1,0 +1,12 @@
+= content_tag_for(:tr, url) do
+	%td.long_url
+		%b= url.title
+		%p= url.long_url
+	%td= link_to url.full_short_link, url.full_short_link
+	%td
+		- if url.created_at.nil?
+			= url.old_clicks
+		- else
+			= url.clicks.size
+
+	%td= link_to "X", admin_url_path(url), :method => :delete, :data => {:confirm => "Are you sure?"}

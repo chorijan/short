@@ -1,17 +1,14 @@
 class Admin::UrlsController < ApplicationController
 
-	before_filter do
-		@site = Site.find(params[:site_id])
-	end
-
 	def index
-		@urls = @site.urls
+		@title = "All URLs"
+		@urls = Url.search(params[:search]).paginate(:page => params[:page])
 	end
 
 	def destroy
-		@url = @site.urls.find(params[:id])
+		@url = Url.find(params[:id])
 		@url.destroy		
-		redirect_to admin_site_path(@site), :notice => "URL Deleted Successfully"
+		redirect_to admin_site_path(@url.site), :notice => "URL Deleted Successfully"
 	end
 
 end

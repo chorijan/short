@@ -5,14 +5,11 @@ VoupeShort::Application.routes.draw do
   root :to => "home#index"
 
   namespace :admin do
-    resources :sites do
-    	resources :urls
-    end
-    # resources :urls
+    resources :sites
+    resources :urls
   end
 
   namespace :api do
-  	# resources :urls
   	match ":site_uuid/urls" => "urls#index"
   	match ":site_uuid/urls/new" => "urls#new"
   end
