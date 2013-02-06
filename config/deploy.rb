@@ -10,12 +10,12 @@ set :application, "voupe_short"
 # set :deploy_to, "/opt/apps/voupe_short"
 
 ## Repository settings
-set :repository, "git@codebasehq.com:voupe/voupe_short/app.git"
+set :repository, "git@codebasehq.com:voupe/voupe-apps/short.git"
 set :branch, "master"
 
 ## Server/app details
-server "1.1.1.1", :web, :app, :db, primary: true
-set :domain_name, "voupe_short.com"
+server "213.5.183.19", :web, :app, :db, primary: true
+set :domain_name, "short.voupe.com"
 
 # =============================================================================
 # RECIPE INCLUDES
