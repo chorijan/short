@@ -2,6 +2,8 @@ class Url < ActiveRecord::Base
 
   attr_accessible :long, :short, :site_id
 
+  belongs_to :site
+
   validates_uniqueness_of :long, :short
   validates_presence_of :site, :long, :short
   # format_url :long
