@@ -9,6 +9,7 @@ class Admin::SitesController < ApplicationController
     @site = Site.find(params[:id])
     @urls = @site.urls.search(params[:search]).paginate(:page => params[:page])
     @title = @site.domain
+    @subtitle = @site.uuid
   end
 
   def new

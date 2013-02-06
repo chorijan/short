@@ -11,7 +11,7 @@ class Url < ActiveRecord::Base
 
   default_scope :order => "id DESC"
 
-  before_create :generate_short
+  before_validation :generate_short
 
   scope :search, lambda { |search| where("long_url LIKE ? OR short LIKE ?", "%#{search}%", "%#{search}%")}
 

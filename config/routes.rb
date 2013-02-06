@@ -11,4 +11,10 @@ VoupeShort::Application.routes.draw do
     # resources :urls
   end
 
+  namespace :api do
+  	# resources :urls
+  	match ":site_uuid/urls" => "urls#index"
+  	match ":site_uuid/urls/new" => "urls#new"
+  end
+
 end
