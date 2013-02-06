@@ -48,6 +48,8 @@ GEM
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
     binding_of_caller (0.6.8)
+    bootstrap-will_paginate (0.0.9)
+      will_paginate
     builder (3.0.4)
     capistrano (2.13.5)
       highline
@@ -262,6 +264,7 @@ DEPENDENCIES
   app_reset
   better_errors
   binding_of_caller
+  bootstrap-will_paginate
   capistrano
   capybara
   coffee-rails (~> 3.2.1)

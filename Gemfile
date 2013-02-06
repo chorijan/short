@@ -10,6 +10,7 @@ gem "jquery-rails"
 
 # Pagination
 gem "will_paginate"
+gem "bootstrap-will_paginate"
 
 # Exceptions
 gem "airbrake"
