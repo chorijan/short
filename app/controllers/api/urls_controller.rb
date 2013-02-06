@@ -15,7 +15,7 @@ class Api::UrlsController < Api::BaseController
 	# create a new url linked to a site
 	def new
     # check to see if there's an existing short url
-    short_url = @site.urls.find_by_long_url(params[:url])
+    short_url = @site.urls.find_by_long_url(params[:url]) || @site.urls.find_by_long_url("http://#{params[:url]}")
 
     if short_url
       respond_to do |format|
