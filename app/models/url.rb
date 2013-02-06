@@ -3,7 +3,7 @@ class Url < ActiveRecord::Base
   attr_accessible :long_url, :short, :site_id
 
   belongs_to :site
-  has_many :clicks
+  has_many :clicks, :dependent => :destroy
 
   validates_uniqueness_of :long_url, :short
   validates_presence_of :site, :long_url, :short
