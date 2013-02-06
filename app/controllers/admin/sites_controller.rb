@@ -6,6 +6,8 @@ class Admin::SitesController < ApplicationController
 
   def show
     @site = Site.find(params[:id])
+    @urls = @site.urls
+    @title = @site.domain
   end
 
   def new

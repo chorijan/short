@@ -5,7 +5,10 @@ VoupeShort::Application.routes.draw do
   root :to => "home#index"
 
   namespace :admin do
-    resources :sites
+    resources :sites do
+    	resources :urls
+    end
+    # resources :urls
   end
 
 end
