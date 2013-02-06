@@ -19,6 +19,11 @@ class Url < ActiveRecord::Base
   	"http://#{self.site.domain}/#{self.short}"  	
   end
 
+  # customised as_json call
+  def as_json(options={})
+    { :id => id, :full_url => full_short_link, :short => short, :long_url => long_url, :title => title }
+  end
+
 	private
 
 	def generate_short
