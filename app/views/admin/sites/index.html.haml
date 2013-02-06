@@ -1,0 +1,22 @@
+%h1 Listing sites
+
+%table
+  %tr
+    %th Name
+    %th Uuid
+    %th Domain
+    %th
+    %th
+    %th
+
+  - @sites.each do |site|
+    %tr
+      %td= site.name
+      %td= site.uuid
+      %td= site.domain
+      %td= link_to 'Show', admin_site_path(site)
+      %td= link_to 'Edit', edit_admin_site_path(site)
+
+%br
+
+= link_to 'New Site', new_admin_site_path

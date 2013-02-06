@@ -1,0 +1,13 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @site.name
+%p
+  %b Uuid:
+  = @site.uuid
+%p
+  %b Domain:
+  = @site.domain
+
+= link_to 'Edit', edit_admin_site_path(@site)

@@ -1,0 +1,15 @@
+- if @site.errors.any?
+	#error_explanation
+		%h2= "#{pluralize(@site.errors.count, "error")} prohibited this admin_site from being saved:"
+		%ul
+			- @site.errors.full_messages.each do |msg|
+				%li= msg
+
+.field
+	= f.label :name
+	= f.text_field :name
+.field
+	= f.label :domain
+	= f.text_field :domain
+.actions
+	= f.submit 'Save'
