@@ -1,0 +1,6 @@
+- if flash[:success] or flash[:notice]
+	.alert.alert-success
+		= raw flash[:success] || flash[:notice]
+- if flash[:error] or flash[:alert]
+	.alert.alert-error
+		= raw flash[:error] || flash[:alert]

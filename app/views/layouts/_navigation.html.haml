@@ -1,0 +1,17 @@
+= link_to "Voupe Short", admin_sites_path, :class => "brand"
+.nav-collapse.collapse
+	%ul.nav
+		%li.dropdown
+			%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+				Sites
+				%b.caret
+			%ul.dropdown-menu
+				%li= link_to "New Site", new_admin_site_path
+				%li.divider
+				- Site.all.each do |site|
+					%li= link_to "#{site.name} (#{site.urls.size})", admin_site_path(site)
+		%li= link_to "URLS", ""
+				
+
+	/ %p.navbar-text.pull-right
+	/ 	= link_to "Logged in as #{current_user.email}", logout_path, :class => "navbar-link", :title => "Logout"
