@@ -14,25 +14,30 @@ class Api::UrlsController < Api::BaseController
 
 	# create a new url linked to a site
 	def new
-    uri = URI::parse(params[:url])
-    
-    # check to see if there's an existing short url
-    short_url = @site.urls.find_by_short(uri.path.split('/').second) || @site.urls.find_by_long_url(params[:url]) || @site.urls.find_by_long_url("http://#{params[:url]}")
 
-    if short_url
-      respond_to do |format|
-	      format.html { render :text => short_url.full_short_link }
-	      format.json { respond_with short_url }
-	    end
+    if params[:url].blank?
+	    render :text => "URL not passed as a variable" 
     else
-      @url = @site.urls.create(long_url: params[:url])
-      # Rails.logger.info request.path
+    	uri = URI::parse(params[:url])
 
-      respond_to do |format|
-	      format.html { render :text => @url.full_short_link }
-	      format.json { respond_with @url }
+	    # check to see if there's an existing short url
+	    short_url = @site.urls.find_by_short(uri.path.split('/').second) || @site.urls.find_by_long_url(params[:url]) || @site.urls.find_by_long_url("http://#{params[:url]}")
+
+	    if short_url
+	      respond_to do |format|
+		      format.html { render :text => short_url.full_short_link }
+		      format.json { respond_with short_url }
+		    end
+	    else
+	      @url = @site.urls.create(long_url: params[:url])
+	      # Rails.logger.info request.path
+
+	      respond_to do |format|
+		      format.html { render :text => @url.full_short_link }
+		      format.json { respond_with @url }
+		    end
 	    end
-    end
+	  end
   end
 
 end
