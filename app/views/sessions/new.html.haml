@@ -1,2 +1,9 @@
-%h1 Sessions#new
-%p Find me in app/views/sessions/new.html.haml
+= form_tag sessions_path do
+	= image_tag "http://cdn.voupe.com/logo_smaller.png"
+	%h2 Voupe Short
+	%h3 Sign In
+
+	= text_field_tag :email, params[:email], :class => "input-block-level", :placeholder => "Email"
+	= password_field_tag :password, nil, :class => "input-block-level", :placeholder => "Password"
+
+	= submit_tag "Log In", :class => "btn btn-success"
