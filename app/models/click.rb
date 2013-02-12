@@ -4,4 +4,6 @@ class Click < ActiveRecord::Base
 
   belongs_to :url
 
+  default_scope :order => "id DESC"
+
 end
