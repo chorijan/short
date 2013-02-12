@@ -1,0 +1,16 @@
+%table.table.table-striped.table-bordered
+	%thead
+		%tr
+			%th IP Address
+			%th Referrer
+			%th User Agent
+			%th Date/Time
+	%tbody
+		- @clicks.each do |click|
+			= content_tag_for(:tr, click) do
+				%td= click.ip_address
+				%td.referrer
+					%p= click.referrer
+				%td.user_agent
+					%p= click.user_agent
+				%td= click.created_at.strftime("%e/%m/%y - %H:%M")

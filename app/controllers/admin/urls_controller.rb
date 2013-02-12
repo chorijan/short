@@ -11,4 +11,10 @@ class Admin::UrlsController < ApplicationController
 		redirect_to admin_site_path(@url.site), :notice => "URL Deleted Successfully"
 	end
 
+	def clicks
+		@url = Url.find(params[:id])
+		@clicks = @url.clicks
+		@title = "Clicks for #{@url.full_short_link}"
+	end
+
 end

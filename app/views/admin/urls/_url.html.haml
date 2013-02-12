@@ -7,6 +7,6 @@
 		- if url.created_at.nil?
 			= url.old_clicks
 		- else
-			= url.clicks.size
+			= link_to url.clicks.size, clicks_admin_url_path(url)
 
 	%td= link_to "X", admin_url_path(url), :method => :delete, :data => {:confirm => "Are you sure?"}

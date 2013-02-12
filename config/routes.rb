@@ -6,7 +6,9 @@ VoupeShort::Application.routes.draw do
 
   namespace :admin do
     resources :sites
-    resources :urls
+    resources :urls do
+      member {get :clicks}
+    end
     resources :clicks
   end
 
