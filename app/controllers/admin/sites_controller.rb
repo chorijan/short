@@ -1,5 +1,7 @@
 class Admin::SitesController < ApplicationController
 
+  before_filter :authorize
+
   def index
     @sites = Site.all
     @title = "All Sites"

@@ -24,7 +24,7 @@ gem "unicorn"
 
 # Authentication
 # gem "devise"
-# gem "bcrypt-ruby"
+gem "bcrypt-ruby"
 # gem 'omniauth', '>= 1.1.0'
 # gem 'omniauth-twitter'
 # gem 'omniauth-facebook'

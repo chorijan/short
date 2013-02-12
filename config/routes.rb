@@ -1,6 +1,11 @@
 VoupeShort::Application.routes.draw do
 
-	match ":short" => "urls#goto"
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
+  resources :sessions
+
+  match ":short" => "urls#goto"
   
   root :to => "home#index"
 

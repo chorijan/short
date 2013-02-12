@@ -1,5 +1,7 @@
 class Admin::UrlsController < ApplicationController
 
+	before_filter :authorize
+
 	def index
 		@title = "All URLs"
 		@urls = Url.search(params[:search]).paginate(:page => params[:page])
