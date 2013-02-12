@@ -1,0 +1,7 @@
+= content_tag_for(:tr, click) do
+	%td= link_to click.url.full_short_link, click.url.full_short_link
+	%td= click.ip_address
+	%td.referrer
+		%p= click.referrer
+	%td.user_agent
+		%p= click.user_agent

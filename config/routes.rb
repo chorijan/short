@@ -7,6 +7,7 @@ VoupeShort::Application.routes.draw do
   namespace :admin do
     resources :sites
     resources :urls
+    resources :clicks
   end
 
   namespace :api do

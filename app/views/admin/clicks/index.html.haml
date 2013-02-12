@@ -1,0 +1,11 @@
+%table.table.table-striped.table-bordered
+	%thead
+		%tr
+			%th URL
+			%th IP Address
+			%th Referrer
+			%th User Agent
+	%tbody
+		= render @clicks
+
+= will_paginate @clicks
