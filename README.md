@@ -17,7 +17,7 @@ This isn't required in development but highly recommened for production. Run `ra
 * rake db:migrate
 * rake db:seed
 
-Once everything is setup, start up the server with `rails server` and direct your web browser to [localhost:3000](http://localhost:3000). Login with the default email of `test@test.com` and the password `password`.
+Once everything is setup, start up the server with `rails server` and direct your web browser to [localhost:3000/login](http://localhost:3000/login). Login with the default email of `test@test.com` and the password `password`.
 
 ## Contributing
 
