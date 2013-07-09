@@ -22,4 +22,4 @@ pickle-email-*.html
 .DS_Store
 config/passport.development.key
 config/passport.key
-
+config/database.yml
